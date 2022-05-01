@@ -1,13 +1,13 @@
  <template>
 
-<template if:true={showNewsTickerBar}>
+<template if:true={showNewsTickerBar} class="newsTicker-container">
 <div class="slds-notify slds-notify_alert slds-alert_warning rtl-sticky " role="alert">
     <div class="news-titles">
-      <!-- temp we are using h2 -->
+      <!-- temp we are using p -->
     <p class="news-title">
       +++ Your browser is outdated. Your Salesforce experience may be
-      degraded. +++
-      <a href="#">More Information</a>
+      degraded.
+      <a href="#">More Information</a> +++
     </p>
     </div>
     
