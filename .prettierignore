@@ -6,5 +6,9 @@
 .localdevserver
 .sfdx
 .vscode
+.*ignore
+*.*-meta.xml
+*.sh
+*.log
 
 coverage/
