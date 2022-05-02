@@ -12,9 +12,13 @@ export default class NewsTicker extends LightningElement {
    @api newsTickerBarTimeout = 6000;
    @track showNewsTickerBar = true;
 
-   renderedCallback() {
-      this.template.querySelector(".rtl-sticky").style.backgroundColor = this.customBackgroundColor;
 
+   renderedCallback() {
+      
+      if (this.template.querySelector(".rtl-sticky")) {
+         this.template.querySelector(".rtl-sticky").style.backgroundColor = this.customBackgroundColor;
+      }
+      
       //remove newsTicker bar after some timeout  
       setTimeout(() => {
          if (this.showNewsTickerBar) {
@@ -23,10 +27,10 @@ export default class NewsTicker extends LightningElement {
       }, this.newsTickerBarTimeout);
    }
 
-
    handleNewsTickerBar() {
-      this.showNewsTickerBar = false
+       this.showNewsTickerBar = false
    }
 
+   
 
 }

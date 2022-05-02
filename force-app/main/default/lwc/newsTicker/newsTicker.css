@@ -1,10 +1,18 @@
-    .newsTicker-container {
-        transition: all 0.5s;
-        -webkit-transition: all 0.5s;
-        -moz-transition: all 0.5s;
-        -ms-transition: all 0.5s;
-        -o-transition: all 0.5s;
-    }
+
+.fade-in {
+	animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	-webkit-animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 
     .rtl-closeButton {
@@ -34,6 +42,7 @@
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
         overflow: hidden;
+        width: 80%;
         margin: 0 auto;
     }
 
@@ -48,6 +57,16 @@
         z-index: 99;
     }
 
+
+    @media only screen and (max-width:1440px) {
+
+    .news-title {
+        width: 90%;
+    }
+
+
+}
+
     @media only screen and (max-width:1267px) {
 
         .news-titles {
@@ -55,13 +74,13 @@
 
         }
 
-        .news-title {
-            width: 100%;
-        }
-
-    }
+}
 
     @media only screen and (max-width:767px) {
+
+    .news-title {
+        width: 95%;
+    }
 
         .rtl-sticky {
             top: 48px;
@@ -69,14 +88,13 @@
 
     }
 
+@media only screen and (max-width:600px) {
 
-    @media only screen and (max-width:675px) {
-
-        .news-title {
-            font-size: 14px;
-        }
-
+          .news-title {
+        width: 100%;
     }
+
+    }  
 
 
     @media only screen and (max-width:615px) {
