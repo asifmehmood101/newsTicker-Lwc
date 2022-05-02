@@ -6,6 +6,14 @@
 <targets>
     <target>lightningCommunity__Page</target>
     <target>lightningCommunity__Default</target>
+    <target>lightning__AppPage</target>
 </targets>
+
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default ,lightning__AppPage">
+            <property name="customBackgroundColor" type="String" default="#FF8A00" />
+            <property name="newsTickerBarTimeout" type="Integer"  default="6000"/>
+        </targetConfig>
+    </targetConfigs>
 
 </LightningComponentBundle>

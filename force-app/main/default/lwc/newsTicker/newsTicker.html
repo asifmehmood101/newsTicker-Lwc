@@ -1,22 +1,30 @@
-<template>
-    <div
-        class="slds-notify slds-notify_alert slds-alert_warning rtl-sticky"
-        role="alert"
-    >
-        <div class="news-titles">
-            <!-- temp we are using h2 -->
-            <h2 class="news-title">
-                Your browser is outdated. Your Salesforce experience may be
-                degraded.
-                <a href="#">More Informa ion</a>
-            </h2>
-        </div>
 
-        <button
-            class="slds-button slds-button_icon slds-button_icon-small rtl-closeButton"
-            title="Close"
-        >
-            &Cross;
-        </button>
+  <template if:true={showNewsTickerBar} >
+ 
+<div
+      class="slds-notify slds-notify_alert slds-alert_warning rtl-sticky fade-in"
+      role="alert"
+    >
+      <div class="news-titles">
+        <!-- temp we are using p -->
+        <p class="news-title">
+          +++ Your browser is outdated. Your Salesforce experience may be
+          degraded.Your browser is outdated. Your Salesforce experience may be
+          degraded.Your browser is outdated. Your Salesforce experience may be
+          degraded.
+          <a href="#">More Information</a> +++
+        </p>
+      </div>
+
+      <button
+        class="slds-button slds-button_icon slds-button_icon-small rtl-closeButton"
+        title="Close"
+        onclick={handleNewsTickerBar}
+      >
+        &Cross;
+      </button>
     </div>
+ 
+    
+  </template>
 </template>
