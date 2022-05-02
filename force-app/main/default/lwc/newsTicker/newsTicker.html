@@ -1,7 +1,6 @@
 <template>
-  <template if:true={showNewsTickerBar} >
- 
-<div
+  <template if:true={showNewsTickerBar}>
+    <div
       class="slds-notify slds-notify_alert slds-alert_warning rtl-sticky fade-in"
       role="alert"
     >
@@ -21,10 +20,15 @@
         title="Close"
         onclick={handleNewsTickerBar}
       >
-        &Cross;
+        <lightning-icon
+          icon-name="utility:close"
+          alternative-text="close"
+          variant=""
+          size="small"
+          title="close"
+          class="closeIcon"
+        ></lightning-icon>
       </button>
     </div>
- 
-    
   </template>
 </template>

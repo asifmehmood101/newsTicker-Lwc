@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>54.0</apiVersion>
     <isExposed>true</isExposed>
@@ -11,8 +11,17 @@
 
     <targetConfigs>
         <targetConfig targets="lightningCommunity__Default ,lightning__AppPage">
-            <property name="customBackgroundColor" type="String" default="#FF8A00" />
-            <property name="newsTickerBarTimeout" type="Integer"  default="6000"/>
+            <property
+        name="customBackgroundColor"
+        type="String"
+        default="#FF8A00"
+      />
+            <property
+        name="newsTickerBarTimeout"
+        type="Integer"
+        default="6000"
+      />
+            <property name="fontColor" type="String" default="#fff" />
         </targetConfig>
     </targetConfigs>
 

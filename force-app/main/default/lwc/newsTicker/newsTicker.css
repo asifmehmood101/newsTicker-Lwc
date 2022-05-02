@@ -1,9 +1,7 @@
-
 .fade-in {
-	animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	-webkit-animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fade-in 2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  -webkit-animation: fade-in 2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
-
 
 @keyframes fade-in {
   0% {
@@ -14,93 +12,76 @@
   }
 }
 
-
-    .rtl-closeButton {
-        padding-bottom: 2px;
-        height: 24px;
-        width: 24px;
-        font-size: 1.5rem;
-        color: #fff;
-    }
-
-    .rtl-closeButton:active,
-    .rtl-closeButton:focus {
-        border-color: transparent;
-        box-shadow: none;
-    }
-
-
-    .news-titles {
-        font-size: 17px;
-        line-height: 23.8px;
-        color: #fff;
-        flex: 0 0 100%;
-    }
-
-    .news-title {
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-        overflow: hidden;
-        width: 80%;
-        margin: 0 auto;
-    }
-
-
-    .rtl-sticky {
-        background-color: #FF8A00;
-        padding: 8px 25px;
-        position: fixed;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        z-index: 99;
-    }
-
-
-    @media only screen and (max-width:1440px) {
-
-    .news-title {
-        width: 90%;
-    }
-
-
+.rtl-closeButton {
+  padding-bottom: 2px;
+  height: 24px;
+  width: 24px;
+  font-size: 1.5rem;
+  color: #fff;
 }
 
-    @media only screen and (max-width:1267px) {
-
-        .news-titles {
-            font-size: 15px;
-
-        }
-
+.rtl-closeButton:active,
+.rtl-closeButton:focus {
+  border-color: transparent;
+  box-shadow: none;
 }
 
-    @media only screen and (max-width:767px) {
+.news-titles {
+  font-size: 17px;
+  line-height: 23.8px;
+  color: #fff;
+  flex: 0 0 100%;
+}
 
-    .news-title {
-        width: 95%;
-    }
+.news-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  width: 78%;
+  margin: 0 auto;
+}
 
-        .rtl-sticky {
-            top: 48px;
-        }
+.rtl-sticky {
+  background-color: #ff8a00;
+  padding: 8px 25px;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+}
 
-    }
+@media only screen and (max-width: 1440px) {
+  .news-title {
+    width: 90%;
+  }
+}
 
-@media only screen and (max-width:600px) {
+@media only screen and (max-width: 1267px) {
+  .news-titles {
+    font-size: 15px;
+  }
+}
 
-          .news-title {
-        width: 100%;
-    }
+@media only screen and (max-width: 767px) {
+  .news-title {
+    width: 95%;
+  }
 
-    }  
+  .rtl-sticky {
+    top: 48px;
+  }
+}
 
+@media only screen and (max-width: 600px) {
+  .news-title {
+    width: 100%;
+  }
+}
 
-    @media only screen and (max-width:615px) {
-
-        .rtl-closeButton {
-            display: none;
-        }
-
-    }
+@media only screen and (max-width: 615px) {
+  .rtl-closeButton {
+    display: none;
+  }
+}
