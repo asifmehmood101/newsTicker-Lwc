@@ -27,7 +27,6 @@
 }
 
 .news-titles {
-  height: 36px;
   font-size: 17px;
   line-height: 23.8px;
   color: #fff;
@@ -67,6 +66,7 @@
 }
 
 .rtl-sticky {
+  height: 36px;
   overflow: hidden;
   background-color: #ff8a00;
   padding: 8px 25px;
