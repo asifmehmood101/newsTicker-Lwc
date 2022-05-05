@@ -6,13 +6,15 @@
     >
       <div class="news-titles">
         <!-- temp we are using p -->
-        <p class="news-title">
-          +++ Your browser is outdated. Your Salesforce experience may be
-          degraded.Your browser is outdated. Your Salesforce experience may be
-          degraded.Your browser is outdated. Your Salesforce experience may be
-          degraded.
-          <a href="#">More Information</a> +++
-        </p>
+
+        <template for:each={newsItems} for:item="newsItem">
+          <a
+            href="#"
+            class="list-group-item list-group-item-action"
+            key={newsItem.id}
+            >{newsItem.message}</a
+          >
+        </template>
       </div>
 
       <button

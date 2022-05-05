@@ -9,6 +9,30 @@ export default class NewsTicker extends LightningElement {
   @api newsTickerBarTimeout = 6000;
   @track showNewsTickerBar = true;
 
+  newsItems = [
+    {
+      id: 0,
+      message: "hello",
+      link: "www.google.com"
+    },
+
+    {
+      id: 1,
+      message: "hello123",
+      link: "www.google.com"
+    },
+    {
+      id: 2,
+      message: "hello1234",
+      link: "www.google.com"
+    },
+    {
+      id: 3,
+      message: "hello12345",
+      link: "www.google.com"
+    }
+  ];
+
   renderedCallback() {
     // CHANGE NEWS TICKER BACKGROUND COLOR
     if (this.template.querySelector(".rtl-sticky")) {
