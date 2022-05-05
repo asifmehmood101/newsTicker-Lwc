@@ -4,18 +4,17 @@
       class="slds-notify slds-notify_alert slds-alert_warning rtl-sticky fade-in"
       role="alert"
     >
-      <div class="news-titles">
-        <!-- temp we are using p -->
-
+      <ul class="news-titles">
         <template for:each={newsItems} for:item="newsItem">
-          <a
-            href="#"
-            class="list-group-item list-group-item-action"
-            key={newsItem.id}
-            >{newsItem.message}</a
-          >
+          <li key={newsItem.id}>
+            <a
+              href={newsItem.link}
+              class="list-group-item list-group-item-action"
+              >{newsItem.message}</a
+            >
+          </li>
         </template>
-      </div>
+      </ul>
 
       <button
         class="slds-button slds-button_icon slds-button_icon-small rtl-closeButton"
