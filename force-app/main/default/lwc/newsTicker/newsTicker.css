@@ -6,8 +6,7 @@
 .rtl-closeButton {
   position: absolute;
   padding-bottom: 2px;
-  height: 24px;
-  width: 24px;
+
   font-size: 1.5rem;
   color: #fff;
   margin-right: 10px;
@@ -78,7 +77,7 @@
   position: fixed;
   right: 0;
   content: "";
-  width: 12%;
+  width: 13%;
   padding: 20px;
   background-color: inherit;
   z-index: 9;
@@ -89,25 +88,67 @@
   position: fixed;
   left: 0;
   content: "";
-  width: 12%;
+  width: 13%;
   padding: 20px;
   background-color: inherit;
   z-index: 9;
 }
 
+@media only screen and (max-width: 1820px) {
+  .rtl-sticky::before {
+    width: 10%;
+  }
+
+  .rtl-sticky::after {
+    width: 10%;
+  }
+}
+
+@media only screen and (max-width: 1620px) {
+  .rtl-sticky::before {
+    width: 7%;
+  }
+
+  .rtl-sticky::after {
+    width: 7%;
+  }
+}
+
+@media only screen and (max-width: 1520px) {
+  .rtl-sticky::before {
+    width: 5%;
+  }
+
+  .rtl-sticky::after {
+    width: 5%;
+  }
+}
+
 @media only screen and (max-width: 1440px) {
+  .news-titles {
+    margin-left: 350rem !important; /* dont change it  */
+  }
+
   .news-title {
     width: 90%;
   }
-}
 
-@media only screen and (max-width: 1267px) {
-  .news-titles {
-    font-size: 15px;
+  .rtl-sticky::before {
+    width: 4%;
+  }
+
+  .rtl-sticky::after {
+    width: 4%;
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 820px) {
+  .news-titles {
+    margin-left: 400rem !important; /* dont change it  */
+  }
+}
+
+@media only screen and (max-width: 768px) {
   .news-title {
     width: 95%;
   }
@@ -115,11 +156,13 @@
   .rtl-sticky {
     top: 48px;
   }
-}
 
-@media only screen and (max-width: 600px) {
-  .news-title {
-    width: 100%;
+  .rtl-sticky::before {
+    width: 7%;
+  }
+
+  .rtl-sticky::after {
+    width: 7%;
   }
 }
 
@@ -129,8 +172,12 @@
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .news-title {
+    width: 100%;
+  }
+}
 /* all animations */
-
 @keyframes ticker {
   0% {
     -webkit-transform: translate3d(0, 0, 0);
@@ -141,6 +188,7 @@
   100% {
     -webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-100%, 0, 0);
+    visibility: visible;
   }
 }
 

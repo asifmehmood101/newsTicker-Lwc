@@ -11,6 +11,7 @@ export default class NewsTicker extends LightningElement {
   @api newsTickerBarTimeout = 600000;
   @track showNewsTickerBar = true;
 
+  // temp mock data
   newsItems = [
     {
       id: 0,
