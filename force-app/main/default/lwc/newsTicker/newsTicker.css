@@ -3,21 +3,16 @@
   -webkit-animation: fade-in 2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 .rtl-closeButton {
+  position: absolute;
   padding-bottom: 2px;
   height: 24px;
   width: 24px;
   font-size: 1.5rem;
   color: #fff;
+  margin-right: 10px;
+  right: 0 !important;
+  z-index: 99;
 }
 
 .rtl-closeButton:active,
@@ -27,46 +22,47 @@
 }
 
 .news-titles {
+  position: relative;
+  display: flex;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: ticker;
+  animation-duration: 75s;
+  animation-delay: 6s;
   font-size: 17px;
   line-height: 23.8px;
   color: #fff;
-  flex: 0 0 100%;
-  animation: tic-v 10s cubic-bezier(1, 0, 0.5, 0) infinite;
-  -webkit-animation: tic-v 10s cubic-bezier(1, 0, 0.5, 0) infinite;
+  white-space: nowrap;
+  margin-left: 310rem !important; /* dont change it  */
+}
+
+.news-titles:hover {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -ms-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
 }
 
 .news-title {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
+  display: inline-block;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   width: 78%;
   margin: 0 auto;
+  margin-right: 50px !important;
 }
 
-.news-title template li {
-  display: flex;
-  width: 100%;
-  line-height: 30px;
-  align-items: center;
-  white-space: nowrap;
-  padding-left: 20px;
-}
-
-.news-title template li a {
-  color: #212529;
-  font-weight: bold;
-}
-
-.news-title:hover {
-  animation-play-state: paused;
+.news-title::before,
+.news-title::after {
+  content: "+++";
+  font-weight: 700;
 }
 
 .rtl-sticky {
-  height: 36px;
+  position: relative;
+  display: flex;
   overflow: hidden;
   background-color: #ff8a00;
   padding: 8px 25px;
@@ -74,7 +70,29 @@
   top: 80px;
   left: 0;
   width: 100%;
-  z-index: 99;
+  z-index: 999;
+}
+
+.rtl-sticky::before {
+  display: block;
+  position: fixed;
+  right: 0;
+  content: "";
+  width: 12%;
+  padding: 20px;
+  background-color: inherit;
+  z-index: 9;
+}
+
+.rtl-sticky::after {
+  display: block;
+  position: fixed;
+  left: 0;
+  content: "";
+  width: 12%;
+  padding: 20px;
+  background-color: inherit;
+  z-index: 9;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -111,23 +129,26 @@
   }
 }
 
-@keyframes tic-v {
+/* all animations */
+
+@keyframes ticker {
   0% {
-    margin-top: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
   }
-  20% {
-    margin-top: -30px;
+
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
   }
-  40% {
-    margin-top: -60px;
-  }
-  60% {
-    margin-top: -90px;
-  }
-  80% {
-    margin-top: -120px;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
   }
   100% {
-    margin-top: 0;
+    opacity: 1;
   }
 }

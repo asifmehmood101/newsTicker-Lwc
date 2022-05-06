@@ -6,7 +6,7 @@
     >
       <ul class="news-titles">
         <template for:each={newsItems} for:item="newsItem">
-          <li key={newsItem.id}>
+          <li key={newsItem.id} class="news-title">
             <a
               href={newsItem.link}
               class="list-group-item list-group-item-action"
@@ -15,7 +15,6 @@
           </li>
         </template>
       </ul>
-
       <button
         class="slds-button slds-button_icon slds-button_icon-small rtl-closeButton"
         title="Close"

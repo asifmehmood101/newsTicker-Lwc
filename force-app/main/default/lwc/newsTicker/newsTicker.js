@@ -6,29 +6,35 @@ export default class NewsTicker extends LightningElement {
 
   @api customBackgroundColor;
   @api fontColor;
-  @api newsTickerBarTimeout = 6000;
+  @api animationDuration;
+  @api animationDelay;
+  @api newsTickerBarTimeout = 600000;
   @track showNewsTickerBar = true;
 
   newsItems = [
     {
       id: 0,
-      message: "hello",
+      message:
+        "Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. Your Salesforce experience may be degraded.",
       link: "www.google.com"
     },
 
     {
       id: 1,
-      message: "hello123",
+      message:
+        "Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. Your Salesforce experience may be degraded.",
       link: "www.google.com"
     },
     {
       id: 2,
-      message: "hello1234",
+      message:
+        "Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. Your Salesforce experience may be degraded.",
       link: "www.google.com"
     },
     {
       id: 3,
-      message: "hello12345",
+      message:
+        "Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. Your Salesforce experience may be degraded.",
       link: "www.google.com"
     }
   ];
@@ -43,6 +49,13 @@ export default class NewsTicker extends LightningElement {
     // CHANGE TEXT COLOR
     if (this.template.querySelector(".news-titles")) {
       this.template.querySelector(".news-titles").style.color = this.fontColor;
+      this.template.querySelector(
+        ".news-titles"
+      ).style.animationDuration = `${this.animationDuration}s`;
+
+      this.template.querySelector(
+        ".news-titles"
+      ).style.animationDelay = `${this.animationDelay}s`;
     }
 
     //REMOVE NEWS TICKER BAR AFTER TIMEOUT

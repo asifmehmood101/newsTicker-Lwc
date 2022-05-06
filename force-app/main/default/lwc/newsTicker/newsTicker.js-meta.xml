@@ -11,17 +11,15 @@
 
     <targetConfigs>
         <targetConfig targets="lightningCommunity__Default ,lightning__AppPage">
-            <property
+        <property
         name="customBackgroundColor"
         type="String"
         default="#FF8A00"
       />
-            <property
-        name="newsTickerBarTimeout"
-        type="Integer"
-        default="6000"
-      />
-            <property name="fontColor" type="String" default="#fff" />
+        <property name="newsTickerBarTimeout" type="Integer" default="6000" />
+        <property name="fontColor" type="String" default="#fff" />
+        <property name="animationDuration" type="Integer" default="75" />
+        <property name="animationDelay" type="Integer" default="5" />
         </targetConfig>
     </targetConfigs>
 
