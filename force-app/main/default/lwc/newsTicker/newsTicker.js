@@ -41,15 +41,15 @@ export default class NewsTicker extends LightningElement {
   ];
 
   renderedCallback() {
-    // CHANGE NEWS TICKER BACKGROUND COLOR
+    // background props for experience builder
     if (this.template.querySelector(".rtl-sticky")) {
       this.template.querySelector(".rtl-sticky").style.backgroundColor =
         this.customBackgroundColor;
-    }
 
-    // CHANGE TEXT COLOR
-    if (this.template.querySelector(".news-titles")) {
+      // text props for experience builder
       this.template.querySelector(".news-titles").style.color = this.fontColor;
+
+      //Animation props for experience builder
       this.template.querySelector(
         ".news-titles"
       ).style.animationDuration = `${this.animationDuration}s`;
