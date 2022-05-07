@@ -1,9 +1,6 @@
 import { api, LightningElement, track } from "lwc";
-//import CloseICon from "@salesforce/resourceUrl/Close"
 
 export default class NewsTicker extends LightningElement {
-  //NewsTickerIcon = `${CloseICon}`;
-
   @api customBackgroundColor;
   @api fontColor;
   @api animationDuration;
@@ -16,14 +13,14 @@ export default class NewsTicker extends LightningElement {
     {
       id: 0,
       message:
-        "Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. Your Salesforce experience may be degraded.",
+        "Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. ",
       link: "www.google.com"
     },
 
     {
       id: 1,
       message:
-        "Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. Your Salesforce experience may be degraded.",
+        "Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. ",
       link: "www.google.com"
     },
     {

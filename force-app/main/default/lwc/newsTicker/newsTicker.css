@@ -22,6 +22,7 @@
 .news-titles {
   position: relative;
   display: flex;
+  justify-content: center;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-name: tickerMoveHorizontal;
@@ -30,8 +31,11 @@
   font-size: 17px;
   line-height: 23.8px;
   color: #fff;
-
-  margin-left: 310rem !important; /* dont change it  */
+  transform: translateX(50%);
+  -webkit-transform: translateX(50%);
+  -moz-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  -o-transform: translateX(50%);
 }
 
 .news-titles:hover {
@@ -43,8 +47,7 @@
 }
 
 .news-title {
-  width: 78%;
-  margin: 0 auto;
+  width: 100%;
   white-space: nowrap;
   margin-right: 50px !important;
 }
@@ -100,7 +103,6 @@
 }
 
 /* All mediaQuery */
-
 @media only screen and (max-width: 1820px) {
   .rtl-sticky::before {
     width: 10%;
@@ -132,14 +134,6 @@
 }
 
 @media only screen and (max-width: 1440px) {
-  .news-titles {
-    margin-left: 350rem !important; /* dont change it  */
-  }
-
-  .news-title {
-    width: 90%;
-  }
-
   .rtl-sticky::before {
     width: 4%;
   }
@@ -149,17 +143,7 @@
   }
 }
 
-@media only screen and (max-width: 820px) {
-  .news-titles {
-    margin-left: 400rem !important; /* dont change it  */
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .news-title {
-    width: 95%;
-  }
-
+@media only screen and (max-width: 767px) {
   .rtl-sticky {
     top: 48px;
   }
@@ -175,7 +159,9 @@
 
 @media only screen and (max-width: 615px) {
   .rtl-sticky {
-    height: 60px;
+    height: 50px;
+    padding-left: 19px;
+    padding-right: 19px;
   }
 
   .rtl-closeButton {
@@ -183,11 +169,15 @@
   }
 
   .news-titles {
+    justify-content: flex-end !important;
+    align-items: center;
+    height: auto;
     flex-direction: column;
     flex-wrap: wrap;
     animation-name: tickerMoveVertical;
     margin-left: 0 !important;
-    margin-bottom: -23rem;
+    font-size: 15px;
+    margin-top: 23rem;
   }
 
   .rtl-sticky::before,
@@ -196,26 +186,23 @@
   }
 
   .news-title {
+    line-height: 25px;
     white-space: normal;
-    margin-bottom: 10px !important;
+    margin-bottom: 25px !important;
     margin-right: 0 !important;
     margin-left: 0 !important;
-    height: auto;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .news-title {
-    width: 100%;
   }
 }
 
 /* All Animations */
 @keyframes tickerMoveHorizontal {
   0% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(50%, 0, 0);
+    transform: translate3d(50%, 0, 0);
     visibility: visible;
+    -moz-transform: translate3d(50%, 0, 0);
+    -ms-transform: translate3d(50%, 0, 0);
+    -o-transform: translate3d(50%, 0, 0);
   }
 
   100% {
