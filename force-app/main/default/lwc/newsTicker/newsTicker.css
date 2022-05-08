@@ -22,20 +22,21 @@
 .news-titles {
   position: relative;
   display: flex;
-  justify-content: center;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-name: tickerMoveHorizontal;
+  animation-fill-mode: both;
   animation-duration: 75s;
   animation-delay: 6s;
+  animation-direction: normal;
   font-size: 17px;
   line-height: 23.8px;
   color: #fff;
-  transform: translateX(50%);
-  -webkit-transform: translateX(50%);
-  -moz-transform: translateX(50%);
-  -ms-transform: translateX(50%);
-  -o-transform: translateX(50%);
+  transform: translateX(37%);
+  -webkit-transform: translateX(37%);
+  -moz-transform: translateX(37%);
+  -ms-transform: translateX(37%);
+  -o-transform: translateX(37%);
 }
 
 .news-titles:hover {
@@ -124,6 +125,10 @@
 }
 
 @media only screen and (max-width: 1520px) {
+  .news-title:first-child {
+    margin-left: 1%;
+  }
+
   .rtl-sticky::before {
     width: 5%;
   }
@@ -134,6 +139,10 @@
 }
 
 @media only screen and (max-width: 1440px) {
+  .news-title:first-child {
+    margin-left: 3%;
+  }
+
   .rtl-sticky::before {
     width: 4%;
   }
@@ -143,7 +152,29 @@
   }
 }
 
+@media only screen and (max-width: 1100px) {
+  .news-title:first-child {
+    margin-left: 3.5%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .news-title:first-child {
+    margin-left: 4%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .news-title:first-child {
+    margin-left: 6%;
+  }
+}
+
 @media only screen and (max-width: 767px) {
+  .news-title:first-child {
+    margin-left: 7.5%;
+  }
+
   .rtl-sticky {
     top: 48px;
   }
@@ -169,15 +200,21 @@
   }
 
   .news-titles {
+    transform: translateX(0%);
+    transform: translateY(42.5%);
+    -webkit-transform: translateY(42.5%);
+    -moz-transform: translateY(42.5%);
+    -ms-transform: translateY(42.5%);
+    -o-transform: translateY(42.5%);
+    animation-name: tickerMoveVertical;
+    animation-duration: 40s;
     justify-content: flex-end !important;
     align-items: center;
     height: auto;
     flex-direction: column;
     flex-wrap: wrap;
-    animation-name: tickerMoveVertical;
     margin-left: 0 !important;
-    font-size: 15px;
-    margin-top: 23rem;
+    font-size: 14px;
   }
 
   .rtl-sticky::before,
@@ -188,7 +225,7 @@
   .news-title {
     line-height: 25px;
     white-space: normal;
-    margin-bottom: 25px !important;
+    margin-bottom: 18px !important;
     margin-right: 0 !important;
     margin-left: 0 !important;
   }
@@ -197,38 +234,38 @@
 /* All Animations */
 @keyframes tickerMoveHorizontal {
   0% {
-    -webkit-transform: translate3d(50%, 0, 0);
-    transform: translate3d(50%, 0, 0);
+    transform: translate3d(37%, 0, 0);
+    -webkit-transform: translate3d(37%, 0, 0);
     visibility: visible;
-    -moz-transform: translate3d(50%, 0, 0);
-    -ms-transform: translate3d(50%, 0, 0);
-    -o-transform: translate3d(50%, 0, 0);
+    -moz-transform: translate3d(37%, 0, 0);
+    -ms-transform: translate3d(37%, 0, 0);
+    -o-transform: translate3d(37%, 0, 0);
   }
 
   100% {
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-    -moz-transform: translate3d(-100%, 0, 0);
-    -ms-transform: translate3d(-100%, 0, 0);
-    -o-transform: translate3d(-100%, 0, 0);
+    -webkit-transform: translate3d(-63%, 0, 0);
+    transform: translate3d(-63%, 0, 0);
+    -moz-transform: translate3d(-63%, 0, 0);
+    -ms-transform: translate3d(-63%, 0, 0);
+    -o-transform: translate3d(-63%, 0, 0);
   }
 }
 
 @keyframes tickerMoveVertical {
   0% {
-    transform: translateY(0);
-    -webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -o-transform: translateY(0);
+    transform: translateY(42.5%);
+    -webkit-transform: translateY(42.5%);
+    -moz-transform: translateY(42.5%);
+    -ms-transform: translateY(42.5%);
+    -o-transform: translateY(42.5%);
   }
 
   100% {
-    transform: translateY(-100%);
-    -webkit-transform: translateY(-100%);
-    -moz-transform: translateY(-100%);
-    -ms-transform: translateY(-100%);
-    -o-transform: translateY(-100%);
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
   }
 }
 
