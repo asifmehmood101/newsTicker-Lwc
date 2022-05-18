@@ -5,41 +5,54 @@ export default class NewsTicker extends LightningElement {
   @api fontColor;
   @api animationDuration;
   @api animationDelay;
-  @api newsTickerBarTimeout = 600000;
+  @api newsTickerBarTimeout = 6000;
   @track showNewsTickerBar = true;
+  @track setWidth;
 
   // temp mock data
   newsItems = [
     {
       id: 0,
       message:
-        "Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. ",
+        "0 Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. ",
       link: "www.google.com"
     },
 
     {
       id: 1,
       message:
-        "Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. ",
+        "1 Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. ",
       link: "www.google.com"
     },
     {
       id: 2,
       message:
-        "Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. Your Salesforce experience may be degraded.",
+        "2 Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated.",
       link: "www.google.com"
     },
     {
       id: 3,
       message:
-        "Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. Your Salesforce experience may be degraded.",
+        "3 Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated.",
+      link: "www.google.com"
+    },
+    {
+      id: 4,
+      message:
+        "4 Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated.",
+      link: "www.google.com"
+    },
+    {
+      id: 5,
+      message:
+        "5 Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated.Your Salesforce experience may be degraded.Your browser is outdated.",
       link: "www.google.com"
     }
   ];
 
   renderedCallback() {
-    // background props for experience builder
     if (this.template.querySelector(".rtl-sticky")) {
+      // background props for experience builder
       this.template.querySelector(".rtl-sticky").style.backgroundColor =
         this.customBackgroundColor;
 

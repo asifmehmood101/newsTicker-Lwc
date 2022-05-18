@@ -1,9 +1,6 @@
 <template>
   <template if:true={showNewsTickerBar}>
-    <div
-      class="slds-notify slds-notify_alert slds-alert_warning rtl-sticky"
-      role="alert"
-    >
+    <div class="slds-alert_warning rtl-sticky fade-in" role="alert">
       <ul class="news-titles">
         <template for:each={newsItems} for:item="newsItem">
           <li key={newsItem.id} class="news-title">
