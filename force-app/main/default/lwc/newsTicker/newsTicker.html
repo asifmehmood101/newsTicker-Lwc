@@ -2,15 +2,17 @@
   <template if:true={showNewsTickerBar}>
     <div class="slds-alert_warning rtl-sticky fade-in" role="alert">
       <ul class="news-titles">
-        <template for:each={newsItems} for:item="newsItem">
-          <li key={newsItem.id} class="news-title">
-            <a
-              href={newsItem.link}
-              class="list-group-item list-group-item-action"
-              target="_blank"
-              >{newsItem.message}</a
-            >
-          </li>
+        <template if:true={newsItems.data}>
+          <template for:each={newsItems.data} for:item="newsItem">
+            <li key={newsItem.id} class="news-title">
+              <a
+                href={newsItem}
+                class="list-group-item list-group-item-action"
+                target="_blank"
+                >{newsItem.Message}</a
+              >
+            </li>
+          </template>
         </template>
       </ul>
 

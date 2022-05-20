@@ -1,5 +1,5 @@
-import { api, LightningElement, track } from "lwc";
-
+import { api, LightningElement, track, wire } from "lwc";
+import getNewsMessageList from "@salesforce/apex/NewsMessageController.getNewsMessageList";
 export default class NewsTicker extends LightningElement {
   @api customBackgroundColor;
   @api fontColor;
@@ -9,46 +9,49 @@ export default class NewsTicker extends LightningElement {
   @track showNewsTickerBar = true;
   @track setWidth;
 
-  // temp mock data
-  newsItems = [
-    {
-      id: 0,
-      message:
-        "0 Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. ",
-      link: "www.google.com"
-    },
+  @wire(getNewsMessageList)
+  newsItems
 
-    {
-      id: 1,
-      message:
-        "1 Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. ",
-      link: "www.google.com"
-    },
-    {
-      id: 2,
-      message:
-        "2 Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated.",
-      link: "www.google.com"
-    },
-    {
-      id: 3,
-      message:
-        "3 Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated.",
-      link: "www.google.com"
-    },
-    {
-      id: 4,
-      message:
-        "4 Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated.",
-      link: "www.google.com"
-    },
-    {
-      id: 5,
-      message:
-        "5 Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated.Your Salesforce experience may be degraded.Your browser is outdated.",
-      link: "www.google.com"
-    }
-  ];
+  // temp mock data
+  // newsItems = [
+  //   {
+  //     id: 0,
+  //     message:
+  //       "0 Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. ",
+  //     link: "www.google.com"
+  //   },
+
+  //   {
+  //     id: 1,
+  //     message:
+  //       "1 Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. ",
+  //     link: "www.google.com"
+  //   },
+  //   {
+  //     id: 2,
+  //     message:
+  //       "2 Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated.",
+  //     link: "www.google.com"
+  //   },
+  //   {
+  //     id: 3,
+  //     message:
+  //       "3 Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated.",
+  //     link: "www.google.com"
+  //   },
+  //   {
+  //     id: 4,
+  //     message:
+  //       "4 Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated.",
+  //     link: "www.google.com"
+  //   },
+  //   {
+  //     id: 5,
+  //     message:
+  //       "5 Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated.Your Salesforce experience may be degraded.Your browser is outdated.",
+  //     link: "www.google.com"
+  //   }
+  // ];
 
   renderedCallback() {
     if (this.template.querySelector(".rtl-sticky")) {
