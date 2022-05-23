@@ -16,7 +16,7 @@
   top: 10px;
   margin-right: 10px;
   right: 0 !important;
-  z-index: 99;
+  z-index: 9;
 }
 
 .rtl-closeButton:active,
@@ -86,7 +86,7 @@
   top: 80px;
   left: 0;
   width: 100%;
-  z-index: 999;
+  z-index: 4;
 }
 
 .rtl-sticky::before {
@@ -97,7 +97,7 @@
   padding: 20px;
   top: inherit;
   background-color: inherit;
-  z-index: 9;
+  z-index: 4;
 }
 
 .rtl-sticky::after {
@@ -108,7 +108,7 @@
   padding: 20px;
   top: inherit;
   background-color: inherit;
-  z-index: 9;
+  z-index: 4;
 }
 
 /* All mediaQuery */
