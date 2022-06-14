@@ -2,15 +2,8 @@
   <template if:true={showNewsTickerBar}>
     <div class="slds-alert_warning rtl-sticky fade-in" role="alert">
       <ul class="news-titles">
-        <template for:each={newsItems} for:item="newsItem">
-          <li key={newsItem.id} class="news-title">
-            <a
-              href={newsItem.link}
-              class="list-group-item list-group-item-action"
-              target="_blank"
-              >{newsItem.message}</a
-            >
-          </li>
+        <template for:each={allmessages} for:item="newsItem">
+          <li key={newsItem.Id} class="news-title">{newsItem.Message__c}</li>
         </template>
       </ul>
 
