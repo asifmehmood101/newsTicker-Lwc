@@ -105,8 +105,7 @@ export default class NewsTicker extends LightningElement {
       if (
         (!message.RecommendationAudiences__c ||
           message.RecommendationAudiences__c === "All") &&
-        userId &&
-        !isguest
+        userId
       ) {
         // Show messages to real community users only
         return message;
@@ -116,8 +115,10 @@ export default class NewsTicker extends LightningElement {
         (!message.RecommendationAudiences__c ||
           message.RecommendationAudiences__c === "All")
       ) {
+        // Show messages to all users
         return message;
       }
+      // If no above condition fulfills, then return no message.
       return undefined;
     });
     if (this.allmessages.length > 0) {
