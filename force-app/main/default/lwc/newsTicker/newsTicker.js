@@ -1,6 +1,8 @@
 import { api, LightningElement, track } from "lwc";
 
 import listSObjects from "@salesforce/apex/SObjectCRUDController.listSObjects";
+import isguest from "@salesforce/user/isGuest";
+import userId from "@salesforce/user/Id";
 
 export default class NewsTicker extends LightningElement {
   @api customBackgroundColor;
@@ -8,9 +10,8 @@ export default class NewsTicker extends LightningElement {
   @api animationDuration;
   @api animationDelay;
   @api newsTickerBarTimeout = 6000;
-  @track showNewsTickerBar = true;
+  @track showNewsTickerBar = false;
   @track allmessages;
-
   // temp mock data
   newsItems = [
     {
@@ -91,14 +92,37 @@ export default class NewsTicker extends LightningElement {
         "Message__c",
         "StartDate__c",
         "EndDate__c",
-        "RecommendationAudiences__c"
+        "RecommendationAudiences__c",
+        "AvailableForAnonymousUsers__c"
       ],
       filters: `ORDER BY StartDate__c ASC LIMIT 5`
     });
-
-    this.allmessages = newsMessages;
-
-    console.log("news message", newsMessages);
+    this.allmessages = newsMessages.filter((message) => {
+      if (message.AvailableForAnonymousUsers__c && isguest) {
+        // Show messages to all guest users
+        return message;
+      }
+      if (
+        (!message.RecommendationAudiences__c ||
+          message.RecommendationAudiences__c === "All") &&
+        userId &&
+        !isguest
+      ) {
+        // Show messages to real community users only
+        return message;
+      }
+      if (
+        message.AvailableForAnonymousUsers__c &&
+        (!message.RecommendationAudiences__c ||
+          message.RecommendationAudiences__c === "All")
+      ) {
+        return message;
+      }
+      return undefined;
+    });
+    if (this.allmessages.length > 0) {
+      this.showNewsTickerBar = true;
+    }
   }
 
   handleNewsTickerBar() {

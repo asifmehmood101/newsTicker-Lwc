@@ -3,7 +3,11 @@
     <div class="slds-alert_warning rtl-sticky fade-in" role="alert">
       <ul class="news-titles">
         <template for:each={allmessages} for:item="newsItem">
-          <li key={newsItem.Id} class="news-title">{newsItem.Message__c}</li>
+          <li key={newsItem.Id} class="news-title">
+            <lightning-formatted-rich-text
+              value={newsItem.Message__c}
+            ></lightning-formatted-rich-text>
+          </li>
         </template>
       </ul>
 

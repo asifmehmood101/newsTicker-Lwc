@@ -44,6 +44,7 @@
   -moz-transform: translateX(15%);
   -ms-transform: translateX(15%);
   -o-transform: translateX(15%);
+  display: inline-flex;
 }
 
 .news-titles:hover {
