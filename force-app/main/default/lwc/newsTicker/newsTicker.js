@@ -1,7 +1,7 @@
 import { api, LightningElement, track } from "lwc";
 
 import listSObjects from "@salesforce/apex/SObjectCRUDController.listSObjects";
-import isguest from "@salesforce/user/isGuest";
+import isGuest from "@salesforce/user/isGuest";
 import userId from "@salesforce/user/Id";
 
 export default class NewsTicker extends LightningElement {
@@ -12,46 +12,6 @@ export default class NewsTicker extends LightningElement {
   @api newsTickerBarTimeout = 6000;
   @track showNewsTickerBar = false;
   @track allmessages;
-  // temp mock data
-  newsItems = [
-    {
-      id: 0,
-      message:
-        "0 Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. ",
-      link: "www.google.com"
-    },
-
-    {
-      id: 1,
-      message:
-        "1 Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated. ",
-      link: "www.google.com"
-    },
-    {
-      id: 2,
-      message:
-        "2 Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated.",
-      link: "www.google.com"
-    },
-    {
-      id: 3,
-      message:
-        "3 Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated.",
-      link: "www.google.com"
-    },
-    {
-      id: 4,
-      message:
-        "4 Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated.",
-      link: "www.google.com"
-    },
-    {
-      id: 5,
-      message:
-        "5 Your browser is outdated. Your Salesforce experience may be degraded.Your browser is outdated.Your Salesforce experience may be degraded.Your browser is outdated.",
-      link: "www.google.com"
-    }
-  ];
 
   renderedCallback() {
     if (this.template.querySelector(".rtl-sticky")) {
@@ -93,12 +53,13 @@ export default class NewsTicker extends LightningElement {
         "StartDate__c",
         "EndDate__c",
         "RecommendationAudiences__c",
-        "AvailableForAnonymousUsers__c"
+        "AvailableforanonymousUsers__c"
       ],
       filters: `ORDER BY StartDate__c ASC LIMIT 5`
     });
+
     this.allmessages = newsMessages.filter((message) => {
-      if (message.AvailableForAnonymousUsers__c && isguest) {
+      if (message.AvailableforanonymousUsers__c && isGuest) {
         // Show messages to all guest users
         return message;
       }
@@ -111,7 +72,7 @@ export default class NewsTicker extends LightningElement {
         return message;
       }
       if (
-        message.AvailableForAnonymousUsers__c &&
+        message.AvailableforanonymousUsers__c &&
         (!message.RecommendationAudiences__c ||
           message.RecommendationAudiences__c === "All")
       ) {
