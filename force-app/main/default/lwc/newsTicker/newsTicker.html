@@ -1,15 +1,21 @@
 <template>
   <template if:true={showNewsTickerBar}>
-    <div class="slds-alert_warning rtl-sticky fade-in" role="alert">
-      <ul class="news-titles">
-        <template for:each={allmessages} for:item="newsItem">
-          <li key={newsItem.Id} class="news-title">
-            <lightning-formatted-rich-text
-              value={newsItem.Message__c}
-            ></lightning-formatted-rich-text>
-          </li>
-        </template>
-      </ul>
+    <div class="ticker-wrapper fade-in" role="alert">
+      <div class="ticker-container">
+        <div class="row-custom">
+          <div class="marquee">
+            <div class="marquee__items">
+              <template for:each={allmessages} for:item="newsItem">
+                <div key={newsItem.Id} class="news-title">
+                  <lightning-formatted-rich-text
+                    value={newsItem.Message__c}
+                  ></lightning-formatted-rich-text>
+                </div>
+              </template>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <button
         class="slds-button slds-button_icon slds-button_icon-small rtl-closeButton"
@@ -22,7 +28,7 @@
           variant=""
           size="small"
           title="close"
-          class="closeIcon"
+          class="close-icon"
         ></lightning-icon>
       </button>
     </div>

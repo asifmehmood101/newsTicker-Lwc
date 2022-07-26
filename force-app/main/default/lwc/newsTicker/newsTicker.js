@@ -9,26 +9,27 @@ export default class NewsTicker extends LightningElement {
   @api fontColor;
   @api animationDuration;
   @api animationDelay;
-  @api newsTickerBarTimeout = 6000;
+  @api newsTickerBarTimeout = 99999999;
   @track showNewsTickerBar = false;
   @track allmessages;
 
   renderedCallback() {
-    if (this.template.querySelector(".rtl-sticky")) {
+    if (this.template.querySelector(".ticker-wrapper")) {
       // background props for experience builder
-      this.template.querySelector(".rtl-sticky").style.backgroundColor =
+      this.template.querySelector(".ticker-wrapper").style.backgroundColor =
         this.customBackgroundColor;
 
       // text props for experience builder
-      this.template.querySelector(".news-titles").style.color = this.fontColor;
+      this.template.querySelector(".marquee__items").style.color =
+        this.fontColor;
 
       //Animation props for experience builder
       this.template.querySelector(
-        ".news-titles"
+        ".marquee__items"
       ).style.animationDuration = `${this.animationDuration}s`;
 
       this.template.querySelector(
-        ".news-titles"
+        ".marquee__items"
       ).style.animationDelay = `${this.animationDelay}s`;
     }
 

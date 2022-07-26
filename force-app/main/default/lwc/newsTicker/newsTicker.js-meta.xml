@@ -16,7 +16,11 @@
         type="String"
         default="#FF8A00"
       />
-        <property name="newsTickerBarTimeout" type="Integer" default="6000" />
+        <property
+        name="newsTickerBarTimeout"
+        type="Integer"
+        default="99999999"
+      />
         <property name="fontColor" type="String" default="#fff" />
         <property name="animationDuration" type="Integer" default="100" />
         <property name="animationDelay" type="Integer" default="5" />
