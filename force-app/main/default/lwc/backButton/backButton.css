@@ -1,0 +1,18 @@
+a.rtl-backbutton {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 17px;
+  color: #020203 !important;
+}
+
+a.rtl-backbutton:hover,
+a.rtl-backbutton:visited,
+a.rtl-backbutton:active {
+  text-decoration: none !important;
+}
+
+@media only screen and (max-width: 600px) {
+  a.rtl-backbutton {
+    margin-top: 10px;
+  }
+}
