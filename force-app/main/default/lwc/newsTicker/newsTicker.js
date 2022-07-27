@@ -59,26 +59,37 @@ export default class NewsTicker extends LightningElement {
       filters: `ORDER BY StartDate__c ASC LIMIT 5`
     });
 
+    const currentDateStr = new Date().toLocaleString("en-US", {
+      timeZone: "Europe/Berlin"
+    });
+    const currentDate = new Date(currentDateStr);
     this.allmessages = newsMessages.filter((message) => {
-      if (message.AvailableforanonymousUsers__c && isGuest) {
-        // Show messages to all guest users
-        return message;
-      }
-      if (
-        (!message.RecommendationAudiences__c ||
-          message.RecommendationAudiences__c === "All") &&
-        userId
-      ) {
-        // Show messages to real community users only
-        return message;
-      }
-      if (
-        message.AvailableforanonymousUsers__c &&
-        (!message.RecommendationAudiences__c ||
-          message.RecommendationAudiences__c === "All")
-      ) {
-        // Show messages to all users
-        return message;
+      const endDateStr = new Date(message.EndDate__c).toLocaleString("en-US", {
+        timeZone: "Europe/Berlin"
+      });
+      const endDate = new Date(endDateStr);
+      const diff = endDate - currentDate;
+      if (diff > 0) {
+        if (message.AvailableforanonymousUsers__c && isGuest) {
+          // Show messages to all guest users
+          return message;
+        }
+        if (
+          (!message.RecommendationAudiences__c ||
+            message.RecommendationAudiences__c === "All") &&
+          userId
+        ) {
+          // Show messages to real community users only
+          return message;
+        }
+        if (
+          message.AvailableforanonymousUsers__c &&
+          (!message.RecommendationAudiences__c ||
+            message.RecommendationAudiences__c === "All")
+        ) {
+          // Show messages to all users
+          return message;
+        }
       }
       // If no above condition fulfills, then return no message.
       return undefined;
