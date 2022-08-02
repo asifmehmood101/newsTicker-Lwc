@@ -67,9 +67,17 @@ export default class NewsTicker extends LightningElement {
       const endDateStr = new Date(message.EndDate__c).toLocaleString("en-US", {
         timeZone: "Europe/Berlin"
       });
+      const startDateStr = new Date(message.StartDate__c).toLocaleString(
+        "en-US",
+        {
+          timeZone: "Europe/Berlin"
+        }
+      );
       const endDate = new Date(endDateStr);
-      const diff = endDate - currentDate;
-      if (diff > 0) {
+      const startDate = new Date(startDateStr);
+      const endDatediff = endDate - currentDate;
+      const startDateDiff = startDate - currentDate;
+      if (startDateDiff < 0 && endDatediff > 0) {
         if (message.AvailableforanonymousUsers__c && isGuest) {
           // Show messages to all guest users
           return message;
