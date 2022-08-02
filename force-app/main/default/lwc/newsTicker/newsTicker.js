@@ -69,6 +69,7 @@ export default class NewsTicker extends LightningElement {
       });
       const endDate = new Date(endDateStr);
       const diff = endDate - currentDate;
+
       if (diff > 0) {
         if (message.AvailableforanonymousUsers__c && isGuest) {
           // Show messages to all guest users

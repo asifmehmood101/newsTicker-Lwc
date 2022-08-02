@@ -9,7 +9,6 @@
 
 .rtl-closeButton {
   position: absolute;
-  font-size: 1.5rem;
   color: #fff;
   top: 8px;
   margin-right: 10px;
@@ -19,6 +18,7 @@
 
 .close-icon {
   --sds-c-icon-color-foreground-default: #fff;
+  --lwc-squareIconSmallBoundary: 1.2rem;
 }
 
 .rtl-closeButton:active,
@@ -32,7 +32,7 @@
   overflow: hidden;
   background-color: #ff8a00;
   padding: 8px 50px;
-  top: 84px;
+  top: 77.49px;
   left: 0;
   width: 100%;
   z-index: 4;
@@ -42,7 +42,7 @@
   max-width: 1440px;
   background-color: inherit;
   margin: 0 auto;
-  font-size: 17px;
+  font-size: 14px;
   line-height: 23.8px;
 }
 
@@ -96,9 +96,6 @@
 }
 
 @media only screen and (max-width: 1520px) {
-  .close-icon {
-    --lwc-squareIconSmallBoundary: 1.3rem;
-  }
 }
 
 @media only screen and (max-width: 767px) {
